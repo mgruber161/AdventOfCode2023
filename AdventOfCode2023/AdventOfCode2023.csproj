@@ -10,6 +10,9 @@
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
     <PackageReference Include="System.Composition.AttributedModel" Version="8.0.0" />
+    <None Update="Input/Day01.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
