@@ -1,8 +1,12 @@
-﻿namespace AdventOfCode2023
+﻿using static System.Net.Mime.MediaTypeNames;
+
+namespace AdventOfCode2023
 {
     public interface IProblem
     {
-        string Name { get => GetType().Name; }
-        public void Solve();
+        int Index => int.Parse(new string(Name.Where(Char.IsDigit).ToArray()));
+        string Name => GetType().Name;
+        string[] Input => File.ReadAllLines($"Input/{Name}.txt");
+        public void Solve(string[] input);
     }
 }

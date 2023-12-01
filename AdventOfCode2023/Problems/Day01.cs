@@ -5,9 +5,8 @@ using System.Text.RegularExpressions;
 [Export(typeof(IProblem))]
 public class Day01 : IProblem
 {
-    public void Solve()
+    public void Solve(string[] input)
     {
-        var input = System.IO.File.ReadAllLines(@"Input/Day01.txt");
         var result = new List<int>();
         foreach (var line in input){
             var calibrationValueToAdd = string.Empty;
