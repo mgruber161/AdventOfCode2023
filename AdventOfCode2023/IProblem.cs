@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-
-namespace AdventOfCode2023
+﻿namespace AdventOfCode2023
 {
     public interface IProblem
     {

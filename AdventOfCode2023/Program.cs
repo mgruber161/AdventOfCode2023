@@ -1,5 +1,4 @@
-﻿using AdventOfCode2023.Extensions;
-using System.ComponentModel.Composition;
+﻿using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.Reflection;
 

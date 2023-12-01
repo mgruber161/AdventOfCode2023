@@ -1,6 +1,5 @@
 using AdventOfCode2023;
 using System.ComponentModel.Composition;
-using System.Text.RegularExpressions;
 
 [Export(typeof(IProblem))]
 public class Day01 : IProblem
