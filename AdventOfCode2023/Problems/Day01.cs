@@ -5,7 +5,6 @@ using System.Text.RegularExpressions;
 [Export(typeof(IProblem))]
 public class Day01 : IProblem
 {
-    public string Name => nameof(Day01);
     public void Solve()
     {
         var input = System.IO.File.ReadAllLines(@"Input/Day01.txt");

@@ -2,7 +2,7 @@
 {
     public interface IProblem
     {
-        string Name { get; }
+        string Name { get => GetType().Name; }
         public void Solve();
     }
 }
