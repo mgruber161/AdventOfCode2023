@@ -18,7 +18,7 @@
 
                 Problems.Where(p => p.Name.Equals(selectedProblem, StringComparison.OrdinalIgnoreCase) || 
                     (int.TryParse(selectedProblem, out int problemIndex) && p.Index == problemIndex))
-                    .ToList().ForEach(p => { Console.WriteLine($"Solution of Problem '{p.Name}':"); p.Solve(p.Input); });
+                    .ToList().ForEach(p => { Console.WriteLine($"\nSolution of Problem '{p.Name}':"); p.Solve(p.Input); });
 
                 Console.WriteLine();
             }
