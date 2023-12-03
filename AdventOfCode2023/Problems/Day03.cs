@@ -28,33 +28,33 @@ namespace AdventOfCode2023.Problems
                                 if (k >= j && Char.IsDigit(input[i - 1][k - 1]))
                                     continue;
 
-                                var number = string.Empty;
+                                var number = new StringBuilder();
                                 if (Char.IsDigit(input[i - 1][k]))
                                 {
-                                    number += input[i - 1][k];
+                                    number.Append(input[i - 1][k]);
                                     for (int l = k - 1; l >= 0 && Char.IsDigit(input[i - 1][l]); l--)
-                                        number = input[i - 1][l] + number;
+                                        number.Insert(0, input[i - 1][l]);
                                     for (int m = k + 1; m < input[i - 1].Length && Char.IsDigit(input[i - 1][m]); m++)
-                                        number += input[i - 1][m];
+                                        number.Append(input[i - 1][m]);
                                 }
-                                if (number != string.Empty) { numbers.Add(int.Parse(number)); addedNumbers++; };
+                                if (number.ToString() != string.Empty) { numbers.Add(int.Parse(number.ToString())); addedNumbers++; }
                             }
                         }
 
                         if (j > 0)
                         {
-                            var number = string.Empty;
+                            var number = new StringBuilder();
                             for (int n = j - 1; n >= 0 && Char.IsDigit(input[i][n]); n--)
-                                number = input[i][n] + number;
-                            if (number != string.Empty) { numbers.Add(int.Parse(number)); addedNumbers++; };
+                                number.Insert(0, input[i][n]);
+                            if (number.ToString() != string.Empty) { numbers.Add(int.Parse(number.ToString())); addedNumbers++; }
                         }
 
                         if (j < input[i].Length - 1)
                         {
-                            var number = string.Empty;
+                            var number = new StringBuilder();
                             for (int o = j + 1; o < input[i].Length && Char.IsDigit(input[i][o]); o++)
-                                number += input[i][o];
-                            if (number != string.Empty) { numbers.Add(int.Parse(number)); addedNumbers++; };
+                                number.Append(input[i][o]);
+                            if (number.ToString() != string.Empty) { numbers.Add(int.Parse(number.ToString())); addedNumbers++; }
                         }
 
                         if (i < input.Length - 1)
@@ -64,16 +64,16 @@ namespace AdventOfCode2023.Problems
                                 if (p >= j && Char.IsDigit(input[i + 1][p - 1]))
                                     continue;
 
-                                var number = string.Empty;
+                                var number = new StringBuilder();
                                 if (Char.IsDigit(input[i + 1][p]))
                                 {
-                                    number += input[i + 1][p];
+                                    number.Append(input[i + 1][p]);
                                     for (int l = p - 1; l >= 0 && Char.IsDigit(input[i + 1][l]); l--)
-                                        number = input[i + 1][l] + number;
+                                        number.Insert(0, input[i + 1][l]);
                                     for (int m = p + 1; m < input[i + 1].Length && Char.IsDigit(input[i + 1][m]); m++)
-                                        number += input[i + 1][m];
+                                        number.Append(input[i + 1][m]);
                                 }
-                                if (number != string.Empty) { numbers.Add(int.Parse(number)); addedNumbers++; };
+                                if (number.ToString() != string.Empty) { numbers.Add(int.Parse(number.ToString())); addedNumbers++; }
                             }
                         }
 
