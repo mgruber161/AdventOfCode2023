@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2023
 {
-    internal class Program
+    internal static class Program
     {
         private static readonly List<IProblem> Problems = new();
 

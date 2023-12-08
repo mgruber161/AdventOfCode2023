@@ -2,8 +2,8 @@ namespace AdventOfCode2023.Problems
 {
     public class Day07 : IProblem
     {
-        public static List<char> AllCards = "AKQJT98765432".ToList();
-        public static List<char> AllCardsPart2 = "AKQT98765432J".ToList();
+        public static readonly List<char> AllCards = [.. "AKQJT98765432"];
+        public static readonly List<char> AllCardsPart2 = [.. "AKQT98765432J"];
         public void Solve(string[] input)
         {
             var hands = new List<Hand>();
@@ -74,7 +74,7 @@ namespace AdventOfCode2023.Problems
 
         public bool IsPart1 { get; set; } = true;
 
-        public int CompareTo(object? obj)
+        public int CompareTo(object obj)
         {
             Hand hand = (Hand)obj!;
             if(TypeRank < hand.TypeRank) return 1;
