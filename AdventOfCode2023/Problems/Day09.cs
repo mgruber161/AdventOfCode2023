@@ -6,23 +6,8 @@ namespace AdventOfCode2023.Problems
     {
         public void Solve(string[] input)
         {
-            //Part 1
-            var sum = 0L;
-            foreach (var line in input)
-            {
-                var originalLine = new Regex(@"([-]?\d+)").Matches(line).Cast<Match>().Select(m => long.Parse(m.Value)).ToList();
-                sum += PredictNextValue(originalLine);
-            }
-            Console.WriteLine($"Part 1: {sum}");
-
-            //Part 2
-            sum = 0L;
-            foreach (var line in input)
-            {
-                var originalLine = new Regex(@"([-]?\d+)").Matches(line).Cast<Match>().Select(m => long.Parse(m.Value)).Reverse().ToList();
-                sum += PredictNextValue(originalLine);
-            }
-            Console.WriteLine($"Part 2: {sum}");
+            Console.WriteLine($"Part 1: {input.Sum(x => PredictNextValue(x.Split(' ').Select(long.Parse).ToList()))}");
+            Console.WriteLine($"Part 2: {input.Sum(x => PredictNextValue(x.Split(' ').Select(long.Parse).Reverse().ToList()))}");
         }
 
         private long PredictNextValue(List<long> values)
