@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace AdventOfCode2023.Problems
+﻿namespace AdventOfCode2023.Problems
 {
     internal class Day09 : IProblem
     {
