@@ -1,5 +1,3 @@
-
-
 namespace AdventOfCode2023.Problems
 {
     internal class Day11 : IProblem
@@ -13,9 +11,7 @@ namespace AdventOfCode2023.Problems
         private long CalculateGalaxyDistanceSum(string[] input, int emptyRows)
         {
             var universe = input.Select(l => l.ToList()).ToList();
-            var galaxies = new List<Galaxy>();
-
-            var (emptyX, emptyY) = (new List<int>(), new List<int>());
+            var (emptyX, emptyY, galaxies) = (new List<int>(), new List<int>(), new List<Galaxy>());
 
             //find empty universe colums & rows
             for(int i = 0; i < universe[0].Count; i++)
@@ -42,11 +38,11 @@ namespace AdventOfCode2023.Problems
         {
             var (X, Y) = (0, 0);
             if(galaxy.X > galaxyToPair.X)
-                X = galaxy.X - galaxyToPair.X + (replace * emptyX.Where(val => val >= galaxyToPair.X && val <= galaxy.X).Count());
-            else X = galaxyToPair.X - galaxy.X + (replace * emptyX.Where(val => val <= galaxyToPair.X && val >= galaxy.X).Count());
+                X = galaxy.X - galaxyToPair.X + (replace * emptyX.Count(val => val >= galaxyToPair.X && val <= galaxy.X));
+            else X = galaxyToPair.X - galaxy.X + (replace * emptyX.Count(val => val <= galaxyToPair.X && val >= galaxy.X));
             if(galaxy.Y > galaxyToPair.Y)
-                Y = galaxy.Y - galaxyToPair.Y + (replace * emptyY.Where(val => val >= galaxyToPair.Y && val <= galaxy.Y).Count());
-            else Y = galaxyToPair.Y - galaxy.Y + (replace * emptyY.Where(val => val <= galaxyToPair.Y && val >= galaxy.Y).Count());
+                Y = galaxy.Y - galaxyToPair.Y + (replace * emptyY.Count(val => val >= galaxyToPair.Y && val <= galaxy.Y));
+            else Y = galaxyToPair.Y - galaxy.Y + (replace * emptyY.Count(val => val <= galaxyToPair.Y && val >= galaxy.Y));
             return X + Y;
         }
     }
